@@ -30,8 +30,15 @@ pipeline{
                sh "npm run reporter"
                sh "ls cypress/reports"
             //    publish html pipeline
+              publishHTML([
+                    allowMissing: false, 
+                    alwaysLinkToLastBuild: true, 
+                    keepAll: true, 
+                    reportDir: 'cypress/reports/', 
+                    reportFiles: 'index.html', 
+                    reportName: 'BDD Atlas MultiCucumber Reporter', 
+                    reportTitles: ''])
 
-            
             }
         }
 
