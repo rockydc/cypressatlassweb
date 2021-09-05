@@ -9,6 +9,12 @@ pipeline{
         choice(name: 'RUN', choice:['ALL','TAGS'], description: 'Run Test By')
         string(name: 'TAGS',defaultValue:'',description:'Tags to execute')
     }
+
+    // parameter
+    // 
+
+
+
     // kumpulan task yang akan kita assign di job tersebut
     // task: run automation test
     // 1.clone source code (otomatis di jenkins,jadi diskip)
@@ -17,7 +23,7 @@ pipeline{
     // 4. run test 
     // 5. generate report
 
-    stages:{
+    stages{
         stage('Install dependencies'){
             steps{
                 // semua task operation bisa ditulis disini
