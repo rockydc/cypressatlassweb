@@ -1,0 +1,5 @@
+{
+	"baseUrl": "http://bdd.atlasid.tech/",
+	"testFiles": ["**/*.{feature,features}"],
+	"ignoreTestFiles": "*.js"
+}
