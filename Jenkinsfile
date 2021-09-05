@@ -6,7 +6,7 @@ pipeline{
         }
     }
     parameters{
-        choice(name: 'RUN', choice:['ALL','TAGS'], description: 'Run Test By')
+        choice(name: 'RUN', choices:['ALL','TAGS'], description: 'Run Test By')
         string(name: 'TAGS',defaultValue:'',description:'Tags to execute')
     }
 
