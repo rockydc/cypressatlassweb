@@ -5,6 +5,10 @@ pipeline{
             label 'docker-chrome'
         }
     }
+    parameters{
+        choice(name: 'RUN', choice:['ALL','TAGS'], description: 'Run Test By')
+        string(name: 'TAGS',defaultValue:'',description:'Tags to execute')
+    }
     // kumpulan task yang akan kita assign di job tersebut
     // task: run automation test
     // 1.clone source code (otomatis di jenkins,jadi diskip)
@@ -22,6 +26,13 @@ pipeline{
         }
         stage('run test'){
             steps{
+                script{
+                    if(params.RUN=='ALL'){
+                        sh "npm test"
+                    }else{
+                        sh "npm run cypress-tags --run -e TAGS=`${parms.TAGS}`"
+                    }
+                }
                 sh "npm test"
             }
         }
