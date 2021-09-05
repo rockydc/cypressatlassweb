@@ -8,6 +8,7 @@ Given(/^I open BDD Atlas Web$/, () => {
     homepage.visit("http://bdd.atlasid.tech/");
 });
 
+
 When(/^I type a quote: (.+)$/, (quote) => {
     homepage.type_quote(quote);
 });
