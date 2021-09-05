@@ -28,6 +28,10 @@ pipeline{
         stage('generate report'){
             steps{
                sh "npm run reporter"
+               sh "ls cypress/reports"
+            //    publish html pipeline
+
+            
             }
         }
 
